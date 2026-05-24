@@ -1503,7 +1503,7 @@ fun CartPage(viewModel: MainViewModel) {
                                                 viewModel.addToCart(
                                                     MenuItemEntity(
                                                         id = meal.second.third,
-                                                        restaurantId = cart.first().restaurantId,
+                                                        restaurantId = currentRestaurantId ?: "",
                                                         name = meal.first,
                                                         description = "Delicious addon sweet.",
                                                         price = meal.second.first,
@@ -1512,7 +1512,7 @@ fun CartPage(viewModel: MainViewModel) {
                                                         isNonVeg = false,
                                                         isSpicy = false
                                                     ),
-                                                    cart.first().restaurantId
+                                                    currentRestaurantId ?: ""
                                                 )
                                             },
                                             colors = ButtonDefaults.buttonColors(containerColor = ZomatoRed),
@@ -1776,7 +1776,7 @@ fun CartPage(viewModel: MainViewModel) {
                             placementProgress = "Confirming order status with Food App..."
                             delay(800)
                             viewModel.checkoutAndPlaceOrder(
-                                restaurantId = cart.first().restaurantId,
+                                restaurantId = currentRestaurantId ?: "",
                                 restaurantName = currentRestaurantName,
                                 paymentMethod = "Google Pay UPI",
                                 address = "New York, 123 Main Street",
@@ -1808,7 +1808,7 @@ fun CartPage(viewModel: MainViewModel) {
                             placementProgress = "Finalizing dispatch with Appzeto..."
                             delay(700)
                             viewModel.checkoutAndPlaceOrder(
-                                restaurantId = cart.first().restaurantId,
+                                restaurantId = currentRestaurantId ?: "",
                                 restaurantName = currentRestaurantName,
                                 paymentMethod = "PhonePe UPI",
                                 address = "New York, 123 Main Street",
@@ -1838,7 +1838,7 @@ fun CartPage(viewModel: MainViewModel) {
                             placementProgress = "Authenticating client parameters..."
                             delay(600)
                             viewModel.checkoutAndPlaceOrder(
-                                restaurantId = cart.first().restaurantId,
+                                restaurantId = currentRestaurantId ?: "",
                                 restaurantName = currentRestaurantName,
                                 paymentMethod = "Cash on Delivery",
                                 address = "New York, 123 Main Street",
