@@ -1,0 +1,8 @@
+{
+  "name": "Appzeto Food",
+  "description": "Zomato-like food e-commerce delivery application with Customer, Restaurant, and Delivery boy interfaces, order placement, tracking, inventory management, and simulated operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
